@@ -58,6 +58,7 @@ M.basic = {
   n = {
     ["<"] = { "V<", "toggle tabword" },
     [">"] = { "V>", "toggle tabword" },
+    ["<C-a>"] = { "ggVG", "select all" },
     ["<C-Up>"] = { "<cmd>resize -2<cr>", "Resize up"},
     ["<C-Down>"] = { "<cmd>resize +2<cr>", "Resize down"},
     ["<C-Left>"] = { "<cmd>vertical resize -2<cr>", "Resize up"},

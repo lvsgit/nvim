@@ -7,6 +7,7 @@ local servers = {
   "html",
   "cssls",
   "clangd",
+  "csharp_ls",
 }
 
 for _, lsp in ipairs(servers) do

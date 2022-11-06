@@ -4,8 +4,15 @@ opt.number = false
 opt.inccommand = 'split'
 opt.cmdheight = 0
 opt.swapfile = false
-keymap("t", "jk", [[<C-\><C-n>]])
-keymap("n", "<C-Up>", "<cmd>resize -2<cr>")
-keymap("n", "<C-Down>", "<cmd>resize +2<cr>")
-keymap("n", "<C-Left>", "<cmd>vertical resize -2<cr>")
-keymap("n", "<C-Right>", "<cmd>vertical resize +2<cr>")
+opt.autoread = true
+opt.cursorline = true
+
+
+-- autocmd
+vim.cmd [[
+set autoread
+      autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+set autoread
+]]
